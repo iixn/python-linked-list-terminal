@@ -1,0 +1,11 @@
+{
+    "git.ignoreLimitWarning": true,
+    "[python]": {
+        "editor.tabSize": 2
+    },
+    "files.insertFinalNewline": true,
+    "editor.fontSize": 24,
+    "editor.lineHeight": 26,
+    "window.zoomLevel": 2,
+    "terminal.integrated.fontSize": 20
+}
