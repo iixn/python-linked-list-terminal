@@ -1,12 +1,11 @@
 from os import system
-from termcolor import colored
 from time import sleep
 from sys import exit
 import signal
 
 def signal_handler(signal, frame):
 
-    print(colored("\n\nBye", "yellow"))
+    print("\n\n\033[1;33mBye")
     exit()
 
 signal.signal(signal.SIGINT, signal_handler)
@@ -28,11 +27,11 @@ class linkedList:
     
     if self.head == None:
 
-      print(colored("\nThe list is empty!", "red"))
+      print("\n\033[1;31mThe list is empty!")
 
     else:
 
-      print(colored("\nThe list has items!", "green"))
+      print("\n\033[1;32mThe list has items!")
       
   def addEnd(self, data):
 
@@ -59,7 +58,7 @@ class linkedList:
 
     if node == None:
 
-      print(colored("There is no node!", "red"))
+      print("\033[1;31mThere is no node!")
       return
     
     while node != None:
@@ -69,7 +68,7 @@ class linkedList:
 
       if node == None:
 
-        print(colored("END", "red"))
+        print("\033[1;31mEND")
   
   def delNode(self, key):
     
@@ -142,13 +141,13 @@ def options():
 
         number = int(input("\n\033[1;34mIntroduce a number > "))
         option2(number)
-        print(colored("\nAdded Successfully!", "green"))
+        print("\n\033[1;32mAdded Successfully!")
         sleep(2)
         options()
 
       except ValueError:
 
-        print(colored("\nOnly Numbers!", "red"))
+        print("\n\033[1;31mOnly Numbers!")
         sleep(2)
         options()
 
@@ -158,13 +157,13 @@ def options():
 
         number = int(input("\n\033[1;34mIntroduce a number > "))
         option3(number)
-        print(colored("\nAdded Successfully!", "green"))
+        print("\n\033[1;32mAdded Successfully!")
         sleep(2)
         options()
 
       except ValueError:
 
-        print(colored("\nOnly Numbers!", "red"))
+        print("\n\033[1;31mOnly Numbers!")
         sleep(2)
         options()
 
@@ -174,19 +173,19 @@ def options():
         
         number = int(input("\n\033[1;34mIntroduce the node you want remove > "))
         option4(number)
-        print(colored("\nRemoved Successfully", "green"))
+        print("\n\033[1;32mRemoved Successfully")
         sleep(2)
         options()
 
       except ValueError:
 
-        print(colored("\nOnly Numbers!", "red"))
+        print("\n\033[1;31mOnly Numbers!")
         sleep(2)
         options()
 
       except AttributeError:
 
-        print(colored("\nThe node does not exist!", "red"))
+        print("\n\033[1;31mThe node does not exist!")
         sleep(2)
 
       options()
@@ -195,18 +194,18 @@ def options():
 
       print("")
       option5()
-      input(colored("\nPress ENTER to continue", "blue"))
+      input("\n\033[1;34mPress ENTER to continue")
       options()
 
     else:
 
-      print(colored("\nChoose a correct option!", "red"))
+      print("\n\033[1;31mChoose a correct option!")
       sleep(2)
       options()
 
   except ValueError:
 
-    print(colored("\nOnly Numbers!", "red"))
+    print("\n\033[1;31mOnly Numbers!")
     sleep(2)
     options()
 
