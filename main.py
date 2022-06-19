@@ -2,6 +2,13 @@ from os import system
 from time import sleep
 from sys import exit
 import signal
+import platform
+
+def clearTerm():
+    if platform.system() == "Windows":
+        system("cls")
+    elif platform.system() == "Linux":
+        system("clear")
 
 def signal_handler(signal, frame):
 
@@ -112,7 +119,7 @@ def option5():
 
 def options():
 
-  system("clear")
+  clearTerm()
 
   try:
     option = int(input("""
